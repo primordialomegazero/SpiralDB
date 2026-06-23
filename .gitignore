@@ -1,69 +1,25 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
+# Build artifacts
 *.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-*.so.*
-
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
 *.out
-*.app
+*.exe
+test_cockroach_cinematic
+test_cockroach_final
+spiral_hydra*
+spiraldb_server
+test_hydra_bin
 
-# Build directories
-build/
-Build/
-build-*/
+# IDE
+.vscode/
+.idea/
 
-# CMake generated files
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-Makefile
-install_manifest.txt
-compile_commands.json
+# OS
+.DS_Store
+Thumbs.db
 
-# Temporary files
-*.tmp
-*.log
-*.bak
-*.swp
+# CockroachDB
+/tmp/cockroach/
+cockroach-data/
 
-# vcpkg
-vcpkg_installed/
-
-# debug information files
-*.dwo
-
-# test output & cache
-Testing/
-.cache/
+# Database files
+*.db
+*.db-journal
