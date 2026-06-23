@@ -25,17 +25,17 @@
 ```mermaid
 graph TB
     A[Client] --> B[SpiralDB Gateway]
-    B --> C[CockroachDB<br/>Distributed SQL]
-    B --> D[SQLite<br/>Local Embedded]
-    B --> E[LevelDB<br/>Key-Value Store]
-    B --> F[φ-RAFT<br/>Consensus]
-    B --> G[FHE Bootstrapper<br/>ct+Enc(0)=ct]
-    B --> H[Fractal Index<br/>7 Layers]
-    B --> I[φ-Metrics<br/>Built-in]
-    C --> J[Multi-Node<br/>Cluster]
-    F --> K[Leader<br/>Election]
-    G --> L[Noise<br/>140→40 bits]
-    H --> M[98 Entries<br/>φ-Harmonic]
+    B --> C[CockroachDB (Distributed SQL)]
+    B --> D[SQLite (Local)]
+    B --> E[LevelDB (KV Store)]
+    B --> F[φ-RAFT Consensus]
+    B --> G[FHE Bootstrapper]
+    B --> H[Fractal Index (7 Layers)]
+    B --> I[φ-Metrics (Built-in)]
+    C --> J[Multi-Node Cluster]
+    F --> K[Leader Election]
+    G --> L[Noise 140→40 bits]
+    H --> M[98 Entries (φ-Harmonic)]
 ```
 
 ---
