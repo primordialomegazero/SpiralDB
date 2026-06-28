@@ -225,7 +225,7 @@ flowchart TD
     E --> G
     F --> G
     
-    H[Layer > 1000 entries?] -->|Yes| I[Auto-Compress:<br/>φ-contraction<br/>v = v·φ⁻¹ + avg·(1-φ⁻¹)]
+    H[Layer > 1000 entries?] -->|Yes| I[Auto-Compress:<br/>φ-contraction<br/>v = v·φ⁻¹ + avg·1 minus φ⁻¹]
     I --> J[Memory freed<br/>Integrity preserved]
     
     style B fill:#1a3a1a,stroke:#0f0,color:#fff
