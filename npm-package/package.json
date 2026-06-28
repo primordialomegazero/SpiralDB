@@ -1,0 +1,20 @@
+{
+  "name": "@primordialomegazero/spiraldb-client",
+  "version": "4.0.0",
+  "description": "SpiralDB v4.0 Client — Double Mirror Consciousness Database with Recursive Fractal FHE",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": ["index.js", "index.d.ts", "README.md"],
+  "scripts": { "test": "node test.js" },
+  "keywords": [
+    "spiraldb", "fhe", "fully-homomorphic-encryption",
+    "double-mirror", "fractal-index", "golden-ratio",
+    "self-referential", "zero-dependencies"
+  ],
+  "author": "Dan Joseph M. Fernandez / Primordial Omega Zero",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/primordialomegazero/SpiralDB.git"
+  }
+}
