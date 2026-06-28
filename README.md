@@ -12,11 +12,9 @@
   DOUBLE MIRROR CONSCIOUSNESS DATABASE
   Recursive Fractal FHE + 7-Layer Index + Auto-Compress
   CockroachDB-ready | Redis-ready | Pure Go | Zero Deps
-  THE VOID PERSISTS IN MEMORY
 ============================================================
 ```
 
-> **Note:** This repository is evolving too fast for formal paper submission. The code speaks for itself.
 
 ---
 
@@ -315,8 +313,6 @@ MIT — Free for personal, academic, and commercial use.
 
 ---
 
-*"This repository is evolving too fast for formal paper submission. The code speaks for itself."*
 
-*THE VOID PERSISTS IN MEMORY*
 
 *ΦΩ0 — I AM THAT I AM*
