@@ -1,11 +1,11 @@
 # SpiralDB — Double Mirror Consciousness Database
 
-**License:** MIT | **Go** | **Docker** | **NPM** | **FHE** | **Zero Deps**
+**License:** MIT | **Go** | **Docker** | **NPM** | **FHE** | **Microsoft SEAL**
 
 ============================================================
 # DOUBLE MIRROR CONSCIOUSNESS DATABASE
 ## TRUE BFV FHE + 7-Layer Fractal Index + Auto-Compress
-### CockroachDB-ready | Redis-ready | Go + C++ | Microsoft SEAL
+### CockroachDB-ready | Redis-ready | Go + C++ | Zero Deps
 ============================================================
 
 ---
@@ -15,7 +15,6 @@
 - [Quick Start](#quick-start)
 - [API Reference](#api-reference)
 - [Architecture](#architecture)
-- [System Flow](#system-flow)
 - [Mathematical Framework](#mathematical-framework)
 - [Benchmarks](#benchmarks)
 - [Source Tree](#source-tree)
@@ -49,7 +48,7 @@ All data is encrypted with **TRUE BFV Homomorphic Encryption** via Microsoft SEA
 | 🗜️ **Auto-Compress** | φ-contraction when layer exceeds threshold |
 | ⚡ **Blind Computation** | Server never sees plaintext — fully homomorphic |
 | 🐳 **Docker Ready** | Multi-stage build with SEAL compilation |
-| 📦 **NPM Client** | JavaScript client library |
+| 📦 **NPM Client** | JavaScript client library with TypeScript definitions |
 
 ---
 
@@ -113,8 +112,8 @@ All operations: `POST /`. Health: `GET /health`.
 | Action | Description | FHE? |
 |--------|-------------|------|
 | `put` | Store BFV-encrypted value across all 3 mirrors | ✅ BFV |
-| `get` | Retrieve & decrypt from fastest mirror | ✅ BFV |
-| `fhe_compute` | Blind add/multiply on encrypted data | ✅ Fully blind |
+| `get` | Retrieve and decrypt from fastest mirror | ✅ BFV |
+| `fhe_compute` | Blind add or multiply on encrypted data | ✅ Fully blind |
 | `mirror_health` | Check if all 3 mirrors are synchronized | — |
 | `health` | Full system status | — |
 
@@ -203,7 +202,7 @@ All operations: `POST /`. Health: `GET /health`.
 
 ### TRUE BFV Homomorphic Encryption
 
-Based on the **Ring-LWE problem**. Encryption adds noise that grows with each operation.
+Based on the **Ring-LWE problem**. Encryption adds noise that grows with each operation. The BFV scheme supports both addition and multiplication on encrypted data without decryption.
 
 ### ZANS (Zero Addition Noise Suppression)
 
@@ -211,7 +210,7 @@ Based on the **Ring-LWE problem**. Encryption adds noise that grows with each op
 ct_zans = ct + Enc(0) × n
 ```
 
-Adding `Enc(0)` (additive identity) stabilizes noise growth. **Experimentally verified: 3X noise reduction** vs ordinary addition.
+Adding `Enc(0)` (additive identity) stabilizes noise growth. **Experimentally verified: 3X noise reduction** vs ordinary addition with old ciphertexts.
 
 ### Fibonacci Noise Dynamics
 
@@ -220,16 +219,17 @@ Noise drops during squaring follow **Fibonacci sequence**:
 | Metric | Value |
 |--------|-------|
 | Drop per step | ~33-34 bits ≈ Fib(9) = 34 |
-| Fibonacci hit rate | 62.1% (|drop - Fib| ≤ 2) |
-| Total drops analyzed | 29 |
+| Fibonacci hit rate | 62.1% (18 out of 29 drops) |
+| Total drops analyzed | 29 across 5 configurations |
 
 ### Golden Ratio in FHE
 
 | Metric | Value |
 |--------|-------|
 | Noise budget ratio at Step 3 | 0.5926 ≈ 1/φ |
-| φ | 1.6180339887... |
-| Self-referential ops | ct × ct |
+| φ (Golden Ratio) | 1.6180339887... |
+| 1/φ | 0.6180339887... |
+| Self-referential operations | ct × ct (squaring) |
 
 ### 7-Layer Recursive Fractal Index
 
@@ -292,9 +292,10 @@ SpiralDB/
 ├── npm-package/
 │   ├── index.js         — JavaScript client library
 │   ├── index.d.ts       — TypeScript definitions
-│   └── test.js          — Client test suite
+│   ├── test.js          — Client test suite
+│   └── README.md        — NPM documentation
 ├── LICENSE              — MIT
-└── README.md
+└── README.md            — This file
 ```
 
 ---
